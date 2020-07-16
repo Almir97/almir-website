@@ -1,38 +1,243 @@
-.App {
+/*
+COLOR PALETTE
+https://coolors.co/230903-fde74c-ddcecd-56666b-c5cbd3
+#230903 - Dark Sienna
+#FDE74C - Minion Yellow
+#DDCECD - Pale Silver
+#56666B - Cadet
+#C5CBD3 - Silver Sand
+#343434 - Dark gray for text
+
+
+/* Global styles
+*******************************************************************/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+img {
+  width: 300px;
+}
+*{
+  margin: 0;
+}
+header, h1, h2, h3{
+  font-family: Helvetica, Arial, Sans-serif;
+}
+h2{
+  text-align: center;
+  padding-bottom: 5vh;
+  font-size: calc(15px + 3vw);
+}
+h3{
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 40px;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: #0A192F;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+em{
+  color: #32cec0;
+}
+.navBar-list{
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0;
+  margin: 0;
+}
+
+.navBar-list a{
+  background: #111111;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 23px;
+  color: white;
+  font-size: 25px;
+}
+
+a:hover{
+  color: #888;
+}
+/* HomePage
+*******************************************************************/
+.home{
+  background-image: url(./Images/Profile-Picture-Almir.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.home-container {
+  position: relative;
+  display: box;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 3.5vw;
+  line-height: 1.4;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.fa{
+  position: absolute;
+  bottom: 100px;
   color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.App-link {
-  color: #61dafb;
+/* AboutPage
+*******************************************************************/
+.aboutpage{
+  display: block;
+  width: 80%;
+  line-height: 1.5;
+  font-size: 1.5em;
+  margin: 40px auto;
+}
+.aboutpage p{
+  margin: 0 auto;
+}
+.language-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px;
+  list-style-type: none;
+}
+.language-list li:{
+  padding-bottom: 10px;
+}
+.language-list li::before{
+  content: "\1F4BB";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* EducationPage
+*******************************************************************/
+.western{
+  font-size: 2.5vw;
+  color: #00AEF0;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.education-page{
+  margin: 60px auto;
+  width: 80%;
+  line-height: 1.5;
+  font-size: 25px;
+}
+.education-list{
+  list-style-type: circle;
+}
+
+/* ProjectPage
+*******************************************************************/
+.project-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.project-wrapper{
+  display: block;
+  height: calc(520px + 25vh);
+  border: 2px solid white;
+  padding: 20px 20px 30px;
+  margin: 20px;
+}
+.project-wrapper p{
+  width: 400px;
+  font-size: 25px;
+}
+.button{
+  width: 400px;
+  height: 300px;
+}
+.tower-btn{
+  background-image: url(./Images/tower-defense.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition-duration: 0.60s;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+.tower-btn:hover{
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+}
+.website-btn{
+  background-image: url(./Images/almir-website.PNG);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition-duration: 0.60s;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+.website-btn:hover{
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+}
+.git-icon-project{
+  width: 64px;
+  height: 64px;
+  position: relative;
+  left: 168px;
+}
+.git-button:hover{
+  opacity: 0.5;
+}
+/* ContactPage
+*******************************************************************/
+.contact-page{
+  background: #1B242F;
+  color: #8f9aa7;
+  text-align: center;
+  line-height: 1.4;
+  padding: 50px 0;
+}
+.contact-page ul{
+  list-style-type: none;
+}
+.git-icon-contact{
+  width: 64px;
+  height: 64px;
+  margin: 20px;
+}
+.flex-icons{
+  display: inline-block;
+}
+@media (max-width: 700px){
+  .language-list{
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  .navBar-list{
+    display: none;
   }
+  .fa{
+    bottom: 0;
+  }
+  .overlay{
+    font-size: 4vw;
+  }
+
 }
